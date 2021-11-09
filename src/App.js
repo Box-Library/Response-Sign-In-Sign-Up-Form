@@ -7,8 +7,8 @@ import Temperature from "./components/Temperature";
 const Routing = () => {
   return (
     <Switch>
-      <Route exact path="" component={Home} />
-      <Route exact path="Temperature" component={Temperature} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/Temperature" component={Temperature} />
     </Switch>
   );
 };
