@@ -1,61 +1,36 @@
-// import React from "react";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
-// import Home from "./components/Home";
-// import Temperature from "./components/Temperature";
+import Home from "./components/Home";
+import Temperature from "./components/Temperature";
 
 // const Routing = () => {
 //   return (
 //     <Switch>
-//       {/* <Link t="/" component={Home} /> */}
-//       <Link to="/Home">Home</Link>
-//       {/* <Link to="/Temperature">Temperature</Link> */}
-//       {/* <Link exact path="/Temperature" component={Temperature} /> */}
+//       <Route exact path="/" component={Home} />
+//       <Route exact path="/Temperature" component={Temperature} />
 //     </Switch>
 //   );
 // };
 
-// function App() {
-//   return (
-//     <>
-//       <Router>
-//         <Routing />
-//       </Router>
-//     </>
-//   );
-// }
-
-// export default App;
-
-import React from "react";
-import { Link } from "react-router-dom";
-
-const Header = () => {
+function App() {
   return (
-    <div>
-      <p>Header</p>
-    </div>
+    <>
+      <Router>
+        {/* <Routing /> */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Temperature" exact component={Temperature} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
+    </>
   );
-};
+}
 
-const Homepage = () => {
-  return (
-    <div>
-      <Header />
-      <h1>Homepage </h1>
-      <Link to="/about">Go to Aboutpage</Link>
-      <Link to="/Temperature">Go to Temperature</Link>
-    </div>
-  );
-};
-
-const Aboutpage = () => {
-  return (
-    <div>
-      <Header />
-      <h1>Aboutpage</h1>
-      <Link to="/">Go to Aboutpage</Link>
-    </div>
-  );
-};
-export { Homepage, Aboutpage };
+export default App;
