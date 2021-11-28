@@ -1,23 +1,15 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from "./components/Home";
-import Temperature from "./components/Temperature";
+import signin from "./components/signin";
+import signup from "./components/signup";
 
 function App() {
   return (
     <>
       <Router>
-        {/* <Header/> */}
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/Temperature" exact component={Temperature} />
-          <Redirect to="/" />
+          <Route exact path="/" component={signin} />
+          <Route exact path="/signup" component={signup} />
         </Switch>
       </Router>
     </>
